@@ -1,0 +1,28 @@
+# Ignorar archivos de entorno virtual y temporales
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# Ignorar configuraciones de VSCode
+.vscode/
+
+# Ignorar archivos de entorno
+.env
+.env.*
+
+# Archivos Excel de datos sensibles
+etl/data/*.xlsx
+
+# Archivos creados por Airflow
+logs/
+plugins/
+dags/__pycache__/
+etl/__pycache__/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
