@@ -260,7 +260,8 @@ def limpiar_tablas(persona, contenido, campana, documento, documentodetalle):
     campana['fecha_inicio'] = pd.to_datetime(campana['fecha_inicio'], errors='coerce')
     campana['fecha_fin'] = pd.to_datetime(campana['fecha_fin'], errors='coerce')
     campana['anio'] = campana['fecha_inicio'].dt.year
-    
+    campana['fecha_inicio'] = campana['fecha_inicio'].dt.date
+    campana['fecha_fin'] = campana['fecha_fin'].dt.date
     # Limpieza tabla persona
     persona.drop(columns=['cnikpersona', 'cpaspersona', 'cestsuscripcion', 'ccodgrupo', 'ctipdocumento', 'crucpersona', 'crazempresa', 'cdirempresa', 'cubiempresa', 'cimgpersona', 'ccodpostal',
                       'cnomzona', 'creferencia', 'ntelefono', 'ntelefono2', 'nmovil2', 'nsalfavor', 'ccodidioma', 'cclifactura', 'nvispersona', 'ccodautenticacion',
@@ -400,6 +401,7 @@ def cargar_tablas_en_snowflake(tablas: dict):
         print("✅ Conectado a Snowflake")
 
         for nombre_tabla, df in tablas.items():
+            df.columns = df.columns.str.upper()
             success, nchunks, nrows, _ = write_pandas(
                 conn,
                 df,

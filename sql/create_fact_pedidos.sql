@@ -1,19 +1,19 @@
 CREATE OR REPLACE TABLE FACT_PEDIDOS AS
 SELECT
-    d."ccodpedido" AS id_pedido,
-    d."ccodcampana" AS id_campana,
-    d."ccodcliente" AS id_vendedor,
-    f."Id" AS id_fecha,
-    v."id_coordinadora",
-    u."id_ubicacion",
-    d."nmonpedido" AS monto_total_pedido,
-    d."nmonpago" AS monto_pagado,
+    D.CCODPEDIDO AS ID_PEDIDO,
+    D.CCODCAMPANA AS ID_CAMPANA,
+    D.CCODCLIENTE AS ID_VENDEDOR,
+    F.ID AS ID_FECHA,
+    V.ID_COORDINADORA,
+    U.ID_UBICACION,
+    D.NMONPEDIDO AS MONTO_TOTAL_PEDIDO,
+    D.NMONPAGO AS MONTO_PAGADO,
     IFF(
-        TO_CHAR(v."fecha_ingreso", 'YYYY-MM') = TO_CHAR(d."dfecpedido", 'YYYY-MM'),
+        TO_CHAR(V.FECHA_INGRESO, 'YYYY-MM') = TO_CHAR(D.DFECPEDIDO, 'YYYY-MM'),
         1, 0
-    ) AS es_nueva_vendedora,
-    d."Tipo"
-FROM "STG_DOCUMENTO" d
-LEFT JOIN "DIM_FECHA" f ON d."dfecpedido" = f."Date"
-LEFT JOIN "DIM_VENDEDOR" v ON d."ccodcliente" = v."id_vendedor"
-LEFT JOIN "DIM_UBICACION" u ON v."ccodubigeo" = u."ccodubigeo";
+    ) AS ES_NUEVA_VENDEDORA,
+    D.TIPO
+FROM STG_DOCUMENTO D
+LEFT JOIN DIM_FECHA F ON D.DFECPEDIDO = F.DATE
+LEFT JOIN DIM_VENDEDOR V ON D.CCODCLIENTE = V.ID_VENDEDOR
+LEFT JOIN DIM_UBICACION U ON V.CCODUBIGEO = U.CCODUBIGEO;

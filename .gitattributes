@@ -1,0 +1,2 @@
+# Usa saltos de línea tipo UNIX (LF) en todos los archivos
+* text=auto eol=lf
