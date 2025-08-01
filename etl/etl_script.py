@@ -117,32 +117,35 @@ def limpiar_tablas(persona, contenido, campana, documento, documentodetalle):
     # Define las categorías y sus palabras clave asociadas
     categorias = {
         "Ropa": [
-            "blusa", "vestido", "saco", "pantalon", "pantalón", "camiseta", "básico",
-            "batola", "camisilla", "chaleco", "chaqueta", "conjunto", "enterizo", "polo",
-            "camisa", "top", "leggin", "short", "capri", "chompa", "kimono", "cardigan",
-            "abrigo", "pijama", "capa", "casaca", "botines", "sandalias", "zapatillas",
-            "zapatos", "sniker", "falda", "faldon", "jean", "pantalaon", "bikini",
-            "baby doll", "brasier", "panty", "mandil", "polera", "chompera", "sandalia",
-            "chauqueta", "ballerinas", "zapato", "botin", "pantufla", "camison", "blazer", "bata"
+            "blusa", "vestido", "saco", "pantalon", "pantalón", "camiseta", "básico", "tshirt", "sueter", "sweater",
+            "batola", "camisilla", "chaleco", "chaqueta", "chompa", "chompero", "chompera", "chauqueta", "conjunto", 
+            "enterizo", "polo", "camisa", "top", "leggin", "short", "capri", "kimono", "cardigan", "abrigo", "pijama", 
+            "capa", "casaca", "botines", "sandalias", "sandalia", "zapatillas", "zapatos", "zapato", "sniker", "falda", 
+            "faldon", "jean", "pantalaon", "bikini", "baby doll", "brasier", "panty", "mandil", "polera", "ballerinas", 
+            "botin", "pantufla", "camison", "blazer", "bata"
         ],
         "Maquillaje": [
-            "labial", "lipgloss", "lipstick", "lipstisk", "rubor", "delineador",
-            "rimel", "cejas", "sombras", "polvo", "corrector", "brochas"
+            "labial", "lipgloss", "lipstick", "lipstisk", "rubor", "delineador", "rimel", "cejas", "sombras", "polvo",
+            "corrector", "brochas", "base liquida", "rizador", "tinta de labios"
         ],
         "Perfumes": [
-            "perfume", "esz", "kp"
+            "perfume", "esz", "kp", "insp", "herod", "marly"
         ],
         "Accesorios": [
-            "arete", "collar", "anillo", "morral", "cartera", "bolsa", "lentes", "reloj",
-            "correa", "mascarilla", "cubretodo", "pulsera", "tobillera", "monederos",
-            "mochil", "billetera", "portacelular"
+            "arete", "collar", "anillo", "morral", "cartera", "bolsa", "lentes", "reloj", "correa", "mascarilla",
+            "cubretodo", "pulsera", "tobillera", "monederos", "mochil", "billetera", "portacelular", "bisuteria"
         ],
         "Electrodomésticos": [
-            "horno", "parrilla", "olla", "fuente", "jarra", "taza", "dulcera", "plato",
-            "vaso", "termo", "copas", "vajilla", "moldes", "portacucharas", "cocina",
-            "secadora", "electrodomesticos", "plancha", "miniplancha", "exprimidor",
-            "microondas", "harina", "batidor", "jarrita", "taper", "salero", "lampara",
-            "papelero", "herramienta", "frigobar", "tv", "espejo"
+            "horno", "parrilla", "olla", "fuente", "jarra", "taza", "dulcera", "plato", "vaso", "termo", "copas",
+            "vajilla", "moldes", "portacucharas", "cocina", "secadora", "electrodomesticos", "plancha", "miniplancha",
+            "exprimidor", "microondas", "harina", "batidor", "jarrita", "taper", "salero", "lampara", "papelero",
+            "herramienta", "frigobar", "tv", "espejo", "humidificador"
+        ],
+        "Tecnología": [
+            "audifono", "audífono", "parlante", "radio"
+        ],
+        "Hogar": [
+            "manta", "mantel", "sombrilla", "salida de cama"
         ],
         "Regalos / Incentivos": [
             "regalo", "cartuchera", "gana", "promocion", "pc", "premio"
