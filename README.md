@@ -120,4 +120,5 @@ A **Power BI** dashboard connects to Snowflake via **DirectQuery**. It provides 
 
 This final layer enables business users at **Glamour Perú** to make informed decisions based on centralized, up-to-date information.
 
+![Dashboard Example](DASHBOARD_EXAMPLE.png)
 
