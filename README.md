@@ -19,17 +19,6 @@ This solution was designed for a real-world company that required:
 - Real-time business intelligence through **Power BI** dashboards.
 - A maintainable and secure architecture using industry best practices.
 
-## Table of contents
-
-1. [Dataset and data sources](#dataset-and-data-sources)
-2. [Technologies used](#technologies-used)
-3. [Pipeline architecture](#pipeline-architecture)
-4. [Data modelling](#data-modelling)
-5. [ETL description](#etl-description)
-6. [Orchestration with Airflow](#orchestration-with-airflow)
-7. [Environment setup](#environment-setup)
-8. [Running the project](#running-the-project)
-
 ## Dataset and Data Sources
 
 This pipeline was developed for **Glamour Perú**, a direct sales fashion company. The main data source is a transactional **MySQL** database that stores sales and operational data. The following tables are extracted:
@@ -66,6 +55,13 @@ These sources are processed and integrated to build an analytical foundation for
 The ETL pipeline is designed in modular stages to transform raw ERP transactional data into an analytical **star schema** hosted in **Snowflake**, with orchestration managed by **Apache Airflow**. It follows a weekly schedule and includes the following components:
 
 > **Figure of overall pipeline architecture here**
+
+## Data modelling
+
+The data is organised in a **star schema** to optimise analytical queries.  Six dimension tables and two fact tables are used.
+![Fact Table Pedidos](FACT_PEDIDOS_GLAMOUR.png)
+![Fact Table Pedidos Detalle](FACT_PEDIDOS_DETALLE_GLAMOUR.png)
+
 
 ### 1. Extraction from MySQL
 
@@ -124,8 +120,4 @@ A **Power BI** dashboard connects to Snowflake via **DirectQuery**. It provides 
 
 This final layer enables business users at **Glamour Perú** to make informed decisions based on centralized, up-to-date information.
 
-## Data modelling
-
-The data is organised in a **star schema** to optimise analytical queries.  Six dimension tables and two fact tables are used.
-> **Figure of starc schema here**
 
